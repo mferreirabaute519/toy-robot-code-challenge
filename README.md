@@ -1,11 +1,15 @@
+-------------------------------------- App description ------------------------------------------
+
 The application is a simulation of a toy robot moving on a square table top, of dimensions 5 units x 5 units. There are no other obstructions on the table surface. The robot is free to roam around the surface of the table, but must be prevented from falling to destruction. Any movement that would result in the robot falling from the table must be prevented, however further valid movement commands must still be allowed.
 
 Available commands:
-* PLACE X,Y,F
-* MOVE
-* LEFT
-* RIGHT
-* REPORT
+1. PLACE X,Y,F
+2. MOVE
+3. LEFT
+4. RIGHT
+5. REPORT
+
+-------------------------------------- Requirements ------------------------------------------
 
 - PLACE will put the toy robot on the table in position X,Y and facing NORTH, SOUTH, EAST or WEST.
 - The origin (0,0) can be considered to be the SOUTH WEST most corner.
@@ -19,6 +23,8 @@ Available commands:
 - Standard input provided for testing
 - The application should handle error states appropriately and be robust to user input.
 
+-------------------------------------- Initialize the app ------------------------------------------
+
 Steps to test the app:
 1. Open the terminal and run `yarn install`
 2. Run `yarn start`
@@ -26,21 +32,23 @@ Steps to test the app:
 
 Note: To run the tests do `yarn test` in the terminal
 
-1. TEST DATA - Place the robot at the bottom left of the grid:
+-------------------------------------- Test data ------------------------------------------
+
+1. Place the robot at the bottom left of the grid:
 - PLACE 0 0 EAST
 - REPORT
 
-2. TEST DATA - Error placing the robot off the grid:
+2. Error placing the robot off the grid:
 PLACE 0 10 EAST
 
-3. TEST DATA - Move the robot 3 spots in the grid
+3. Move the robot 3 spots in the grid
 - PLACE 0 0 EAST
 - MOVE
 - MOVE
 - MOVE
 - REPORT
 
-4. TEST DATA - Rotate the robot to the right, move it and face an error. Then rotate it to the left twice and move it 2 spots in the grid
+4. Rotate the robot to the right, move it and face an error. Then rotate it to the left twice and move it 2 spots in the grid
 * After doing TEST DATA 3
 - RIGHT
 - MOVE
@@ -50,6 +58,6 @@ PLACE 0 10 EAST
 - MOVE
 - REPORT
 
-5. TEST DATA - Insert a command not included within the available ones - it will ignore the command and display the error on top and also in the command history
+5. Insert a command not included within the available ones - it will ignore the command and display the error on top and also in the command history
 - PLACE 0 0 EAST
 - COMMAND
