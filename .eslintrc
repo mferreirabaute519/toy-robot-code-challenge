@@ -1,0 +1,21 @@
+{
+  "env": {
+    "browser": true,
+    "jest": true
+  },
+  "extends": [
+    "airbnb-typescript-prettier"
+  ],
+  "rules": {
+    "import/prefer-default-export": "off",
+    "react/require-default-props": "off",
+    "no-plusplus": "off",
+    "react/function-component-definition": [
+      "off",
+      {
+        "namedComponents": "arrow-function",
+        "unnamedComponents": "arrow-function"
+      }
+    ]
+  }
+}
